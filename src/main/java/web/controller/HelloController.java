@@ -12,10 +12,6 @@ import java.util.List;
 public class HelloController {
 
 	@GetMapping(value = "/")
-
-//	Model — это интерфейс, предоставляющий базовый функционал для добавления атрибутов, тогда как ModelMap реализует
-//	Model и расширяет его функционал, предоставляя дополнительные методы, унаследованные от Map
-
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
