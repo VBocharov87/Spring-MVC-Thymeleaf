@@ -10,10 +10,11 @@ import web.service.CarServiceImpl;
 @Controller
 public class CarController {
 
+    CarService carService = new CarServiceImpl();
+
     @GetMapping(value = "/cars")
     public String carWelcome(@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
 
-        CarService carService = new CarServiceImpl();
         model.addAttribute("cars", carService.getCars(count));
 
         return "cars";
