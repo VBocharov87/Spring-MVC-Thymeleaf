@@ -11,8 +11,12 @@ import web.service.CarServiceImpl;
 @Controller
 public class CarController {
 
+    private CarService carService;
+
     @Autowired
-    CarService carService;
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
 
     @GetMapping(value = "/cars")
     public String carWelcome(@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
